@@ -96,28 +96,28 @@ public partial class MainWindow : Window
         }
     }
 
-    private void Button_Click_1(object sender, RoutedEventArgs e)
-    {
-        frame.Navigate(new Uri("Pages\\ItemsList.xaml", UriKind.Relative));
-    }
+    //private void Button_Click_1(object sender, RoutedEventArgs e)
+    //{
+    //    //frame.Navigate(new Uri("Pharmacy1\\Pharmacy1\\MainWindow.xaml", UriKind.Relative));
+    //}
 
-    private void Button_Click_2(object sender, RoutedEventArgs e)
-    {
-        frame.Navigate(new Uri("Pages\\AddItemPage.xaml", UriKind.Relative));
+    //private void Button_Click_2(object sender, RoutedEventArgs e)
+    //{
+    //    frame.Navigate(new Uri("Pages\\AddItemPage.xaml", UriKind.Relative));
 
-    }
+    //}
 
-    private void Button_Click_3(object sender, RoutedEventArgs e)
+    private void Button_Companies(object sender, RoutedEventArgs e)
     {
         frame.Navigate(new Uri("Pages\\Companies.xaml", UriKind.Relative));
     }
 
-    private void Button_Click_4(object sender, RoutedEventArgs e)
+    private void Button_Items(object sender, RoutedEventArgs e)
     {
         frame.Navigate(new Uri("Pages\\Items.xaml", UriKind.Relative));
     }
 
-    private void Button_Click_5(object sender, RoutedEventArgs e)
+    private void Button_Suppliers(object sender, RoutedEventArgs e)
     {
         frame.Navigate(new Uri("Pages\\Suppliers.xaml", UriKind.Relative));
     }

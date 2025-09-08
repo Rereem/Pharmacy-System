@@ -25,7 +25,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <ScrollViewer>
+      
             <DataGrid  Name="dataGrid" 
                     AutoGenerateColumns="False" 
                     ItemsSource="{Binding Source={StaticResource supviewsource}}" 
@@ -38,7 +38,7 @@
                     <DataGridTextColumn Header="Phone" Binding="{Binding Path=Phone}"/>
                 </DataGrid.Columns>
             </DataGrid>
-        </ScrollViewer>
+       
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
 
             <Button Content="Add" 

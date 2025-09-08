@@ -1,4 +1,5 @@
-﻿using Pharmacy1.Data;
+﻿using Pharmacy.Services;
+using Pharmacy.Services.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,12 +19,14 @@ namespace Pharmacy1
     /// <summary>
     /// Interaction logic for AddCompany.xaml
     /// </summary>
-    public partial class AddCompany : Window
+    public partial class AddCompanyWin : Window
     {
-        PharmDB db => App.db;
-        public AddCompany()
+        PharmDB db => App.db; 
+        CompanyService cs;
+        public AddCompanyWin()
         {
             InitializeComponent();
+            cs = new CompanyService(db);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -31,8 +34,7 @@ namespace Pharmacy1
             var comp = Resources["Company"] as Company;
             if (comp != null)
             {
-                db.Companies.Add(comp);
-                db.SaveChanges();
+                cs.AddCompany(comp);
                 MessageBox.Show("Addtion successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
 
             }
@@ -40,5 +42,7 @@ namespace Pharmacy1
 
             DialogResult = true;
         }
+
+
     }
 }

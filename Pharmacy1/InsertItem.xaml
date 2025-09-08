@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:Pharmacy1.Data"
         mc:Ignorable="d"
         Title="InsertItem" Height="750" Width="1300"
-    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
+    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" xmlns:local1="clr-namespace:Pharmacy.Services.Data;assembly=Pharmacy.Services">
     <Window.Resources>
-        <local:Item x:Key="item"/>
+        <local1:Item x:Key="item"/>
 
      
        

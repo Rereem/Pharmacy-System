@@ -9,22 +9,36 @@
         Title="MainWindow" Height="700" Width="1200">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
+            <RowDefinition Height="30" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Grid.Resources>
             <Style TargetType="{x:Type Button}" x:Key="{x:Static ToolBar.ButtonStyleKey}">
                 <Setter Property="Padding" Value="10" />
-                <Setter Property="Background" Value="Gray" />
+                <Setter Property="Background" Value="LightBlue" />
             </Style>
 
+            
         </Grid.Resources>
-        <ToolBar Grid.Row="0">
+        <Menu Background="Transparent" >
+            <MenuItem Header="Companies" Click="Button_Companies">
+                    <Separator/>
+                    <MenuItem Header="hello"/>
+                    <MenuItem Header="hi"/>
+                    <MenuItem Header="hi"/>
+                    <MenuItem Header="hi"/>
+                
+            </MenuItem>
+            <MenuItem Header="Items" Click="Button_Items"/>
+            <MenuItem Header="Suppliers" Click="Button_Suppliers"/>
+
+        </Menu>
+        <!--<ToolBar Grid.Row="0">
             <ToolBar.Resources>
             </ToolBar.Resources>
             <Button Click="Button_Click_1">
                 <StackPanel>
-                    <TextBlock>Open</TextBlock>
+                    <TextBlock>MainWindow</TextBlock>
 
                 </StackPanel>
             </Button>
@@ -33,7 +47,7 @@
             <Button Click="Button_Click_3">Companies</Button>
             <Button Click="Button_Click_4">Items</Button>
             <Button Click="Button_Click_5">Suppliers</Button>
-        </ToolBar>
+        </ToolBar>-->
         <Frame Grid.Row="1" x:Name="frame" NavigationUIVisibility="Hidden"/>
 
     </Grid>

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Pharmacy1.Migrations
+namespace Pharmacy.Services.Migrations
 {
     /// <inheritdoc />
     public partial class mg1 : Migration

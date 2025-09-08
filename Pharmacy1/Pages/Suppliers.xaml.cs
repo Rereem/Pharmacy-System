@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Pharmacy.Services.Data;
 using Pharmacy1.Data;
 using System;
 using System.Collections;
@@ -56,7 +57,7 @@ namespace Pharmacy1.Pages
 
         private void Button_Add(object sender, RoutedEventArgs e)
         {
-            AddSupplierWnd addSupplier = new AddSupplierWnd();
+            AddSupplier addSupplier = new AddSupplier();
             addSupplier.ShowDialog();
 
         }

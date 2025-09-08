@@ -4,6 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Pharmacy1.Pages"
+      xmlns:local1="clr-namespace:Pharmacy.Services.Data;assembly=Pharmacy.Services"
+       
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Companies"
@@ -12,39 +14,98 @@
 
     <Page.Resources>
         <CollectionViewSource x:Key="compviewsource"/>
+        
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Width" Value="600"/>
+            <Setter Property="Height" Value="40"/>
+            
+
+        </Style>
         <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
-            <Setter Property="Height" Value="20"/>
-            <Setter Property="Width" Value="123"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="120"/>
             <Setter Property="Margin" Value="5,0"/>
         </Style>
     </Page.Resources>
-    <Grid>
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="4*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+    
         
-        <ScrollViewer>
-            <DataGrid  Name="dataGrid" 
+    <Grid DataContext="{StaticResource compviewsource}">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="60" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.RowSpan="3" Margin="10" 
+        CornerRadius="3"
+        BorderBrush="LightGray"
+        BorderThickness="2">
+
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="0" Direction="0" Color="Gray" Opacity="0.2" BlurRadius="10"/>
+            </Border.Effect>
+        </Border>
+
+
+        <Grid Grid.Row="0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Search"  Margin="100 10 10 0"/>
+            <TextBox   Grid.Row="0" Grid.Column="1" x:Name="Search" TextChanged="Search_TextChanged" />
+        </Grid>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <DataGrid Style="{DynamicResource DataGridStyle1}"   Grid.Row="1" Margin="100 0 50 0" Name="dataGrid" 
                         AutoGenerateColumns="False" 
-                        ItemsSource="{Binding Source={StaticResource compviewsource}}" 
+                        ItemsSource="{Binding }" 
                         RowDetailsVisibilityMode="VisibleWhenSelected" 
-                        IsReadOnly="True">
+                        IsReadOnly="True"
+                        Width="800"
+                         >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding Path=Id}"/>
-                    <DataGridTextColumn Header="Name" Binding="{Binding Path=NameAr}"/>
-                    <DataGridTextColumn Header="Name" Binding="{Binding Path=NameEn}"/>
+                    <DataGridTextColumn Header="Code " Binding="{Binding Path=Code}" Width="70"/>
+                    <DataGridTextColumn Header="NameAr" Binding="{Binding Path=NameAr}" Width="150"/>
+                    <DataGridTextColumn Header="NameEn" Binding="{Binding Path=NameEn}" Width="150"/>
+                    <DataGridTextColumn Header="Phone Number" Binding="{Binding Path=Phone}" Width="150"/>
                 </DataGrid.Columns>
             </DataGrid>
-        </ScrollViewer>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
-        
-        <Button Content="Add" 
+
+            <DataGrid  x:Name="DataGridItem"
+                       AutoGenerateColumns="False" 
+                       ItemsSource="{Binding Items}" 
+                       RowDetailsVisibilityMode="VisibleWhenSelected"
+                       Width="400">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="NameAr" Binding="{Binding Path=NameAr}"/>
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+
+            <Button Content="Add" 
                 Click="Button_Add"/>
-        <Button Content="Edit"
+            <Button Content="Edit"
                 Click="Button_Edit"/>
-            
+            <Button Content="Delete"
+                Click="Button_Delete"/>
+
         </StackPanel>
     </Grid>
 </Page>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pharmacy1.Data
+namespace Pharmacy.Services.Data
 {
     public class UsageManner
     {

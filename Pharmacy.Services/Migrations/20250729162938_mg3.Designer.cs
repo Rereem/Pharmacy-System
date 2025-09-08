@@ -5,15 +5,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Pharmacy1.Data;
+using Pharmacy.Services.Data;
 
 #nullable disable
 
-namespace Pharmacy1.Migrations
+namespace Pharmacy.Services.Migrations
 {
     [DbContext(typeof(PharmDB))]
-    [Migration("20250715133047_mg1")]
-    partial class mg1
+    [Migration("20250729162938_mg3")]
+    partial class mg3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -228,9 +228,6 @@ namespace Pharmacy1.Migrations
                     b.Property<int?>("Unit3Id")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UsageCauseId")
-                        .HasColumnType("int");
-
                     b.Property<int>("UsageMannerId")
                         .HasColumnType("int");
 
@@ -247,8 +244,6 @@ namespace Pharmacy1.Migrations
                     b.HasIndex("Unit2Id");
 
                     b.HasIndex("Unit3Id");
-
-                    b.HasIndex("UsageCauseId");
 
                     b.HasIndex("UsageMannerId");
 
@@ -407,10 +402,6 @@ namespace Pharmacy1.Migrations
                         .WithMany()
                         .HasForeignKey("Unit3Id");
 
-                    b.HasOne("Pharmacy1.Data.UsageCause", "UsageCause")
-                        .WithMany()
-                        .HasForeignKey("UsageCauseId");
-
                     b.HasOne("Pharmacy1.Data.UsageManner", "UsageManner")
                         .WithMany()
                         .HasForeignKey("UsageMannerId")
@@ -428,8 +419,6 @@ namespace Pharmacy1.Migrations
                     b.Navigation("Unit2");
 
                     b.Navigation("Unit3");
-
-                    b.Navigation("UsageCause");
 
                     b.Navigation("UsageManner");
                 });

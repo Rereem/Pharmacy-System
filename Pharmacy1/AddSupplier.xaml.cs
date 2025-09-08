@@ -1,4 +1,5 @@
-﻿using Pharmacy1.Data;
+﻿using Pharmacy.Services.Data;
+using Pharmacy1.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,10 +19,10 @@ namespace Pharmacy1.Pages
     /// <summary>
     /// Interaction logic for AddSupplier.xaml
     /// </summary>
-    public partial class AddSupplierWnd : Window
+    public partial class AddSupplier : Window
     {
         PharmDB db => App.db;
-        public AddSupplierWnd()
+        public AddSupplier()
         {
             InitializeComponent();
         }

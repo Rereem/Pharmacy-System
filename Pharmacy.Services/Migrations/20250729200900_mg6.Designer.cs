@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Pharmacy1.Data;
+using Pharmacy.Services.Data;
 
 #nullable disable
 
-namespace Pharmacy1.Migrations
+namespace Pharmacy.Services.Migrations
 {
     [DbContext(typeof(PharmDB))]
     [Migration("20250729200900_mg6")]

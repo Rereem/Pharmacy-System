@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Pharmacy1.Migrations
+namespace Pharmacy.Services.Migrations
 {
     /// <inheritdoc />
     public partial class mg5 : Migration

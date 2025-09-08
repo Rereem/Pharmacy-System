@@ -4,16 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pharmacy1.Data
+namespace Pharmacy.Services.Data
 {
-    public class Group
+    public class Format
     {
         public int Id { get; set; }
+        public string NameEn { get; set; } = null!;
+        public string NameAr { get; set; } = null!;
         public int Code { get; set; }
-        public string? NameEn { get; set; }
-        public string? NameAr { get; set; } 
-        public int ParentId { get; set; } 
-
-        
     }
 }

@@ -5,15 +5,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Pharmacy1.Data;
+using Pharmacy.Services.Data;
 
 #nullable disable
 
-namespace Pharmacy1.Migrations
+namespace Pharmacy.Services.Migrations
 {
     [DbContext(typeof(PharmDB))]
-    [Migration("20250729164602_mg4")]
-    partial class mg4
+    [Migration("20250729200748_mg5")]
+    partial class mg5
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -162,35 +162,34 @@ namespace Pharmacy1.Migrations
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Discount")
+                    b.Property<int?>("Discount")
                         .HasColumnType("int");
 
                     b.Property<string>("Effective")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("FormatId")
+                    b.Property<int?>("FormatId")
                         .HasColumnType("int");
 
-                    b.Property<int>("GroupId")
+                    b.Property<int?>("GroupId")
                         .HasColumnType("int");
 
-                    b.Property<bool>("HasExpire")
+                    b.Property<bool?>("HasExpire")
                         .HasColumnType("bit");
 
                     b.Property<string>("IntCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsMedicine")
+                    b.Property<bool?>("IsMedicine")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsPrevent")
+                    b.Property<bool?>("IsPrevent")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsShortage")
+                    b.Property<bool?>("IsShortage")
                         .HasColumnType("bit");
 
-                    b.Property<int>("MinLimit")
+                    b.Property<int?>("MinLimit")
                         .HasColumnType("int");
 
                     b.Property<string>("NameAr")
@@ -202,22 +201,21 @@ namespace Pharmacy1.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Origin")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PurchaseUnit")
+                    b.Property<int?>("PurchaseUnit")
                         .HasColumnType("int");
 
                     b.Property<string>("ScientificName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SellPrice")
+                    b.Property<int?>("SellPrice")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Tax")
+                    b.Property<decimal?>("Tax")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("Unit1Id")
+                    b.Property<int?>("Unit1Id")
                         .HasColumnType("int");
 
                     b.Property<int?>("Unit2Id")
@@ -226,7 +224,7 @@ namespace Pharmacy1.Migrations
                     b.Property<int?>("Unit3Id")
                         .HasColumnType("int");
 
-                    b.Property<int>("UsageMannerId")
+                    b.Property<int?>("UsageMannerId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -372,21 +370,15 @@ namespace Pharmacy1.Migrations
 
                     b.HasOne("Pharmacy1.Data.Format", "Format")
                         .WithMany()
-                        .HasForeignKey("FormatId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FormatId");
 
                     b.HasOne("Pharmacy1.Data.Group", "Group")
                         .WithMany()
-                        .HasForeignKey("GroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("GroupId");
 
                     b.HasOne("Pharmacy1.Data.Unit", "Unit1")
                         .WithMany()
-                        .HasForeignKey("Unit1Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Unit1Id");
 
                     b.HasOne("Pharmacy1.Data.Unit", "Unit2")
                         .WithMany()
@@ -398,9 +390,7 @@ namespace Pharmacy1.Migrations
 
                     b.HasOne("Pharmacy1.Data.UsageManner", "UsageManner")
                         .WithMany()
-                        .HasForeignKey("UsageMannerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UsageMannerId");
 
                     b.Navigation("Company");
 
