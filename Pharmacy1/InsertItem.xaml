@@ -3,15 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Pharmacy1.Data"
+        xmlns:local="clr-namespace:Pharmacy1.Data" 
         mc:Ignorable="d"
         Title="InsertItem" Height="750" Width="1300"
-    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" xmlns:local1="clr-namespace:Pharmacy.Services.Data;assembly=Pharmacy.Services">
+        xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2"
+        >
     <Window.Resources>
-        <local1:Item x:Key="item"/>
+        <local:Item x:Key="item"/>
 
-     
-       
+
+
 
         <!-- Text Styles -->
         <Style TargetType="TextBlock">

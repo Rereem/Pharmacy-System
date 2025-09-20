@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Update;
-using Pharmacy.Services;
-using Pharmacy.Services.Data;
 using Pharmacy1.Data;
 using System;
 using System.Collections.Generic;

@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
 using Pharmacy1.Data;
 using System;
 using System.Collections.Generic;
@@ -21,11 +20,11 @@ namespace Pharmacy1.Pages
     /// <summary>
     /// Interaction logic for Items.xaml
     /// </summary>
-    public partial class Items : Page
+    public partial class ItemsPage : Page
     {
         PharmDB db => App.db;
         private CollectionViewSource itemviewsource;
-        public Items()
+        public ItemsPage()
         {
             InitializeComponent();
             itemviewsource = (CollectionViewSource)FindResource(nameof(itemviewsource));

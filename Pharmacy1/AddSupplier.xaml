@@ -3,13 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Pharmacy1" 
-        xmlns:local1="clr-namespace:Pharmacy.Services.Data;assembly=Pharmacy.Services"
+        xmlns:local="clr-namespace:Pharmacy1.Data" 
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="AddSupplier" Height="450" Width="600">
     <Window.Resources>
-        <local1:Supplier x:Key="Supplier"/>
+        <local:Supplier x:Key="Supplier"/>
 
         <Style TargetType="TextBox" >
             <Setter Property="Margin" Value="10,0,10,15"/>
